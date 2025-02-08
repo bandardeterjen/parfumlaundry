@@ -22,10 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(showNext, 5000);
 
     // Mobile Navigation Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+  // Select the menu icon and nav links
+const menuIcon = document.getElementById('menuIcon');
+const navLinks = document.getElementById('navLinks');
 
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+// Add click event to toggle the menu
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
 });
