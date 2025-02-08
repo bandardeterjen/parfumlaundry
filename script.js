@@ -1,31 +1,31 @@
-// Carousel functionality
-const carousel = document.querySelector('.carousel');
-const items = document.querySelectorAll('.carousel-item');
-let index = 0;
+document.addEventListener('DOMContentLoaded', function () {
+    // Carousel Functionality
+    const items = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
 
-function showNext() {
-    if (index >= items.length - 1) index = -1;
-    index++;
-    updateCarousel();
-}
+    function showNext() {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % items.length;
+        items[currentIndex].classList.add('active');
+    }
 
-function showPrev() {
-    if (index <= 0) index = items.length;
-    index--;
-    updateCarousel();
-}
+    function showPrev() {
+        items[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        items[currentIndex].classList.add('active');
+    }
 
-function updateCarousel() {
-    carousel.style.transform = `translateX(${-index * 100}%)`;
-}
+    document.querySelector('.next').addEventListener('click', showNext);
+    document.querySelector('.prev').addEventListener('click', showPrev);
 
-document.querySelector('.next-btn').addEventListener('click', showNext);
-document.querySelector('.prev-btn').addEventListener('click', showPrev);
+    // Auto slide every 5 seconds
+    setInterval(showNext, 5000);
 
-// Mobile Navigation
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+    // Mobile Navigation Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });
