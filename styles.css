@@ -276,7 +276,16 @@ body {
     color: #4169E1;
 }
 
+/* Price */
+.price {
+    padding: 3rem 1rem;
+    text-align: center;
+}
 
+.price h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
 
 
 /* CTA Section */
