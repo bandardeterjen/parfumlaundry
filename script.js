@@ -1,38 +1,31 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // Carousel Functionality
-    const items = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
+// Carousel functionality
+const carousel = document.querySelector('.carousel');
+const items = document.querySelectorAll('.carousel-item');
+let index = 0;
 
-    function showNext() {
-        items[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % items.length;
-        items[currentIndex].classList.add('active');
-    }
+function showNext() {
+    if (index >= items.length - 1) index = -1;
+    index++;
+    updateCarousel();
+}
 
-    function showPrev() {
-        items[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex - 1 + items.length) % items.length;
-        items[currentIndex].classList.add('active');
-    }
+function showPrev() {
+    if (index <= 0) index = items.length;
+    index--;
+    updateCarousel();
+}
 
-    document.querySelector('.next').addEventListener('click', showNext);
-    document.querySelector('.prev').addEventListener('click', showPrev);
+function updateCarousel() {
+    carousel.style.transform = `translateX(${-index * 100}%)`;
+}
 
-    // Auto slide every 5 seconds
-    setInterval(showNext, 5000);
+document.querySelector('.next-btn').addEventListener('click', showNext);
+document.querySelector('.prev-btn').addEventListener('click', showPrev);
 
-   
-  // Select the menu icon and nav links
-const menuIcon = document.getElementById('menuIcon');
-const navLinks = document.getElementById('navLinks');
+// Mobile Navigation
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-
-});
-// Select the menu icon and nav links
-const menuIcon = document.getElementById('menuIcon');
-const navLinks = document.getElementById('navLinks');
-
-// Add click event to toggle the menu
-menuIcon.addEventListener('click', () => {
+hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
