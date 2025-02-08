@@ -28,3 +28,11 @@ const navLinks = document.getElementById('navLinks');
 
 
 });
+// Select the menu icon and nav links
+const menuIcon = document.getElementById('menuIcon');
+const navLinks = document.getElementById('navLinks');
+
+// Add click event to toggle the menu
+menuIcon.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
