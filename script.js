@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    // Carousel Functionality
     const items = document.querySelectorAll('.carousel-item');
     let currentIndex = 0;
 
@@ -19,4 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Auto slide every 5 seconds
     setInterval(showNext, 5000);
+
+    // Mobile Navigation Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
 });
