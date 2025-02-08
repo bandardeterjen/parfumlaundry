@@ -277,14 +277,7 @@ body {
 }
 
 /* Price */
-.price {
-    background: #fff;
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
 .price h2 {
-    margin-bottom: 2rem;
     font-size: 2rem;
     text-align: center;
 
