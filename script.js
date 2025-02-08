@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Auto slide every 5 seconds
     setInterval(showNext, 5000);
 
-    // Mobile Navigation Toggle
+   
   // Select the menu icon and nav links
 const menuIcon = document.getElementById('menuIcon');
 const navLinks = document.getElementById('navLinks');
@@ -30,4 +30,4 @@ const navLinks = document.getElementById('navLinks');
 menuIcon.addEventListener('click', () => {
     navLinks.classList.toggle('active');
 });
-});
+
