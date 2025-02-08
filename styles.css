@@ -276,6 +276,20 @@ body {
     color: #4169E1;
 }
 
+/* Price */
+.price {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.price h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    text-align: center;
+
+
+
 /* CTA Section */
 .cta {
     background: #4169E1;
@@ -436,7 +450,7 @@ a{
 }
 
 .popular::before {
-    content: "Most Popular";
+    content: "Paling Laku";
     position: absolute;
     top: -15px;
     left: 50%;
