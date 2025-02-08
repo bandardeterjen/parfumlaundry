@@ -12,70 +12,75 @@ body {
 }
 
 header {
-    background: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
+/* Hamburger Menu */
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default */
 }
 
-header .nav-links {
+/* Logo */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Links */
+.nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
 }
 
-header .nav-links li a {
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-size: 18px;
     transition: color 0.3s ease;
 }
 
-header .nav-links li a:hover {
-    color: #007BFF;
+.nav-links a:hover {
+    color: #f4c10f;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-}
-
-/* Mobile Navigation */
+/* Responsive Design */
 @media (max-width: 768px) {
-    header .nav-links {
-        display: none;
+    .menu-icon {
+        display: block; /* Show the hamburger menu */
+    }
+
+    .nav-links {
+        display: none; /* Hide the nav links by default */
         flex-direction: column;
-        background: #fff;
+        background-color: #333;
         position: absolute;
-        top: 100%;
-        left: 0;
+        top: 60px;
+        right: 0;
         width: 100%;
-        padding: 1rem;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
     }
 
-    header .nav-links.active {
-        display: flex;
+    .nav-links li {
+        margin: 10px 0;
     }
 
-    .menu-toggle {
-        display: block;
+    .nav-links.active {
+        display: flex; /* Show the nav links when active */
     }
 }
-
 /* Hero Section */
 .hero {
     text-align: center;
